@@ -1,21 +1,36 @@
-/*---------------------------------------------------------------------------------------------
- *  Copyright (c) Microsoft Corporation. All rights reserved.
- *  Licensed under the MIT License. See License.txt in the project root for license information.
- *--------------------------------------------------------------------------------------------*/
+// 引入express
+const express = require('express')
+// 创建app
+const app = express()
+// 引入chartsOne,chartsTwo,chartsThree,chartsFour文件
+const chartsOne = require('./router/chartsOne')
+const chartsTwo = require('./router/chartsTwo')
+const chartsThree = require('./router/chartsThree')
+const chartsFour = require('./router/chartsFour')
 
-'use strict';
+// 使用，当链接匹配则调用该路由
+app.use('/one',chartsOne)
+app.use('/two',chartsTwo)
+app.use('/three',chartsThree)
+app.use('/four',chartsFour)
 
-const express = require('express');
+app.get('/', (req, res)=>{
+    console.log('欢迎来到首页')
+    res.send('我是首页')
+})
 
-// Constants
-const PORT = 3000;
-const HOST = '0.0.0.0';
+app.get('/user', (req, res)=>{
+    console.log('欢迎来到用户页')
+    res.send('我是用户页')
+})
 
-// App
-const app = express();
-app.get('/', (req, res) => {
-	res.send('Hello remote world!\n');
-});
+app.use(function(req,res){
+    res.send("404")
+    console.log('页面不存在,请确认网址是否错误！！！')
+})
 
-app.listen(PORT, HOST);
-console.log(`Running on http://${HOST}:${PORT}`);
+// 监听端口号跟地址
+const PORT = 3000
+const HOST = '0.0.0.0'
+app.listen(PORT,HOST)
+console.log(`Running on http://${HOST}:${PORT}`)
