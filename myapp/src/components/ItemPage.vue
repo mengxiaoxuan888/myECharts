@@ -12,8 +12,8 @@ export default {
 
 <style scoped lang="less">
 .ItemPage{
-  height: 18.125rem;
-  border: .0625rem solid rgb(125, 98, 231);
-  margin: 1.25rem;
+  height: 5.125rem;
+  border: 1px solid rgb(125, 98, 231);
+  margin: 0.25rem;
 }
 </style>

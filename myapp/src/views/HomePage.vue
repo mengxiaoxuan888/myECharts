@@ -56,14 +56,14 @@ export default {
 
 <style lang="less">
 header{
-  height: 5rem;
+  height: 1rem;
   width: 100%;
   background-color: rgba(94, 94, 96, 0.1);
   h1{
-    font-size: 1.5rem;
+    font-size: 0.375rem;
     color: #fff;
     text-align: center;
-    line-height: 5rem;
+    line-height: 1rem;
   }
 }
 
@@ -71,19 +71,19 @@ header{
   color: #fff;
   min-width: 1200px;
   max-width: 2048px;
-  padding: 0 auto;
+  margin: 0 auto;
   // border: 3px solid red;
-  margin: .625rem .625rem 0;
+  padding: 0.125rem 0.125rem 0;
   display: flex;
   .itemLeft,.itemRight{
     flex: 3;
   }
   .itemCenter{
     flex: 5;
-    height: 37.5rem;
-    border: .0625rem solid blue;
-    margin: 1.25rem;
-    padding: 1.25rem;
+    height: 10.5rem;
+    border: 1px solid blue;
+    margin: 0.25rem;
+    padding: 0.125rem;
   }
 }
 </style>
