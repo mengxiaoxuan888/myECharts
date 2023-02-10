@@ -1,29 +1,30 @@
 <template>
   <div>
     <header>
-      <h1>数据可视化项目开发</h1>
+      <h1>千锋教育--大数据可视化</h1>
     </header>
-    <!-- 主体部分大盒子 -->
+    <!-- 大容器 -->
     <section class="container">
-      <!-- 左部分 -->
+      <!-- 左容器 -->
       <section class="itemLeft">
-        <ItemPage>
-          <ItemOne></ItemOne>
+        <ItemPage >
+          <ItemOne/>
         </ItemPage>
-        <ItemPage>
+         <ItemPage >
           <ItemTwo/>
         </ItemPage>
       </section>
-      <!-- 中间部分 -->
+      <!-- 中容器 -->
       <section class="itemCenter">
-        
+      
+      <MapPage/>
       </section>
-      <!-- 右部分 -->
+      <!-- 右容器 -->
       <section class="itemRight">
-        <ItemPage>
+        <ItemPage >
           <ItemThree/>
         </ItemPage>
-        <ItemPage>
+         <ItemPage >
           <ItemFour/>
         </ItemPage>
       </section>
@@ -32,34 +33,36 @@
 </template>
 
 <script>
-import ItemPage from '@/components/ItemPage.vue'
-import ItemOne from '@/components/ItemOne.vue'
-import ItemTwo from '@/components/ItemTwo.vue'
-import ItemThree from '@/components/ItemThree.vue'
-import ItemFour from '@/components/ItemFour.vue'
-// 接收数据
-import {inject} from 'vue'
+import ItemPage from "@/components/ItemPage.vue";
+
+import ItemOne from "@/components/ItemOne.vue"
+import ItemTwo from "@/components/ItemTwo.vue"
+import ItemThree from "@/components/ItemThree.vue"
+import ItemFour from "@/components/ItemFour.vue"
+import MapPage from "@/components/mapPage.vue"
+
+import {inject} from "vue"
 export default {
-    name: 'HomePage',
-    components:{
-      ItemPage,ItemOne,ItemTwo,ItemThree,ItemFour
-    },
-    setup() {
-      //要接收的数据名称
-      let $echarts = inject('echarts')
-      console.log($echarts)
-      let $http = inject('axios')
-      console.log($http)
-    }
-}
+  components: {
+    ItemPage,ItemOne,ItemTwo,ItemThree,ItemFour,MapPage
+  },
+
+  setup(){
+    let $echarts=inject("echarts")
+    let $http=inject("axios")
+    console.log($echarts)
+    console.log($http)
+  }
+};
 </script>
 
 <style lang="less">
-header{
+header {
   height: 1rem;
   width: 100%;
-  background-color: rgba(94, 94, 96, 0.1);
-  h1{
+  background-color: rgba(0, 0, 255, 0.2);
+  // 标题的文字样式
+  h1 {
     font-size: 0.375rem;
     color: #fff;
     text-align: center;
@@ -67,23 +70,26 @@ header{
   }
 }
 
-.container{
-  color: #fff;
+// 大容器的样式
+.container {
+  // 最大最小的宽度
   min-width: 1200px;
   max-width: 2048px;
   margin: 0 auto;
-  // border: 3px solid red;
   padding: 0.125rem 0.125rem 0;
+  // background-color: gray;
   display: flex;
-  .itemLeft,.itemRight{
+  // 设置左右在页面的份数
+  .itemLeft,
+  .itemRight {
     flex: 3;
   }
-  .itemCenter{
+  .itemCenter {
     flex: 5;
-    height: 10.5rem;
+    height: 10.5rpx;
     border: 1px solid blue;
-    margin: 0.25rem;
-    padding: 0.125rem;
+    padding:  0.125rem;
+    margin: .25rem;
   }
 }
 </style>

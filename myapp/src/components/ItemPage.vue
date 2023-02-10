@@ -1,19 +1,21 @@
 <template>
-  <div class="ItemPage">
-    <slot></slot>
+  <div class="item">
+      <!-- 设置插槽 -->
+      <slot></slot>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'ItemPage'
+
 }
 </script>
 
-<style scoped lang="less">
-.ItemPage{
-  height: 5.125rem;
-  border: 1px solid rgb(125, 98, 231);
-  margin: 0.25rem;
+<style lang="less">
+.item{
+    height: 5.125rem;
+    border: 1px solid blue;
+    margin: .25rem;
+    background-color: rgba(12,130,255,.85);
 }
 </style>
