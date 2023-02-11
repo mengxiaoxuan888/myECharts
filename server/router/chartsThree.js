@@ -9,7 +9,7 @@ const threeData = require("../mock/three.json");
 router.get("/data", (req, res) => {
   // 发送json数据返回给请求者
   // res.send('{"name":"第三个图表","age":18}')
-  res.send({"threeData":threeData})
+  res.send({"chartThree":threeData})
 });
 
 // 将路由暴漏出去

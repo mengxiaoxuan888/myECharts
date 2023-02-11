@@ -9,7 +9,7 @@ const fourData = require("../mock/four.json");
 router.get("/data", (req, res) => {
   // 发送json数据返回给请求者
   // res.send('{"name":"第四个图表","age":18}');
-  res.send({"fourData":fourData})
+  res.send({"chartFour":fourData})
 });
 
 // 将路由暴漏出去

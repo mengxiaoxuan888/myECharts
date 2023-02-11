@@ -16,6 +16,7 @@ export default {
 
     async function getState() {
       data = await $http({ url: "/two/data" });
+      console.log(data.data.chartTwo.chartData)
     }
 
     onMounted(() => {

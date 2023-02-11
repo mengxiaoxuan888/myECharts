@@ -24,12 +24,15 @@ const chartsOne = require('./router/chartsOne')
 const chartsTwo = require('./router/chartsTwo')
 const chartsThree = require('./router/chartsThree')
 const chartsFour = require('./router/chartsFour')
+// 引入chartsMap中国地图文件
+const chartMap=require("./router/chartsMap")
 
 // 使用，当链接匹配则调用该路由
 app.use('/one',chartsOne)
 app.use('/two',chartsTwo)
 app.use('/three',chartsThree)
 app.use('/four',chartsFour)
+app.use("/china",chartMap)
 
 // 发起get请求，首页匹配地址
 app.get('/', (req, res)=>{
