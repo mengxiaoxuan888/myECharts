@@ -11,7 +11,7 @@
           <ItemOne/>
         </ItemPage>
          <ItemPage >
-          <ItemTwo/>
+          <!-- <ItemTwo/> -->
         </ItemPage>
       </section>
       <!-- 中容器 -->
@@ -22,10 +22,10 @@
       <!-- 右容器 -->
       <section class="itemRight">
         <ItemPage >
-          <ItemThree/>
+          <!-- <ItemThree/> -->
         </ItemPage>
          <ItemPage >
-          <ItemFour/>
+          <!-- <ItemFour/> -->
         </ItemPage>
       </section>
     </section>
@@ -36,15 +36,16 @@
 import ItemPage from "@/components/ItemPage.vue";
 
 import ItemOne from "@/components/ItemOne.vue"
-import ItemTwo from "@/components/ItemTwo.vue"
-import ItemThree from "@/components/ItemThree.vue"
-import ItemFour from "@/components/ItemFour.vue"
-import MapPage from "@/components/mapPage.vue"
+// import ItemTwo from "@/components/ItemTwo.vue"
+// import ItemThree from "@/components/ItemThree.vue"
+// import ItemFour from "@/components/ItemFour.vue"
+// import MapPage from "@/components/mapPage.vue"
 
 import {inject} from "vue"
 export default {
   components: {
-    ItemPage,ItemOne,ItemTwo,ItemThree,ItemFour,MapPage
+    // ItemPage,ItemOne,ItemTwo,ItemThree,ItemFour,MapPage
+    ItemPage,ItemOne
   },
 
   setup(){

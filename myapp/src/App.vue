@@ -11,7 +11,10 @@ import * as echarts from 'echarts'
 import axios from 'axios'
 
 //设置基准路径，就是获取服务器数据的地址，这样一旦路径变了，这里修改即可
-axios.defaults.baseURL='http://172.0.0.1:3000'
+// axios.defaults.baseURL='http://172.0.0.1:3000'
+axios.defaults.baseURL='https://mengxiaoxuan888-effective-tribble-57gj5jx4xwj34gwq-3000.preview.app.github.dev'
+// axios.defaults.baseURL = "/one";
+
 export default ({
   setup() {
     // provider('名字随便起','传递的内容')

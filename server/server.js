@@ -3,6 +3,11 @@ const express = require('express')
 // 创建app
 const app = express()
 
+
+const cors = require("cors");
+// 使用cors中间件
+app.use(cors());
+
 // 设置跨域
 app.use(function(req,res,next){
     res.header('Access-Control-Allow-Origin', '*');
@@ -10,9 +15,7 @@ app.use(function(req,res,next){
     res.header('Access-Control-Allow-Headers', 'Content-Type,Content-Length, Authorization, Accept, X-Requested-With , yourHeaderFeild');
 
     res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE,OPTIONS');
-    // 千万不要网%%￥￥￥###
-    // 千万不要网
-    // 千万不要网
+
     next();
 })
 

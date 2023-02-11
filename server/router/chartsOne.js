@@ -9,7 +9,7 @@ const oneData = require("../mock/one.json");
 router.get("/data", (req, res) => {
   // 发送json数据返回给请求者
   // res.send({"name":"第一个图表","age":18})
-  res.send({"oneDate":oneData})
+  res.send({"oneData":oneData})
 });
 
 // 将路由暴漏出去
