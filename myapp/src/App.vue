@@ -17,6 +17,7 @@ axios.defaults.baseURL='http://127.0.0.1:3000'
 
 export default ({
   setup() {
+    // 全局传递
     // provider('名字随便起','传递的内容')
     provide('echarts',echarts)
     provide('axios',axios)

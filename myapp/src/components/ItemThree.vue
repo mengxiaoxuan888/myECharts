@@ -11,21 +11,23 @@
 import {inject,onMounted,reactive} from "vue"
 export default {
   setup(){
+    //引入echarts,axios
     let $echarts=inject("echarts")
     let $http=inject("axios")
 
     let data=reactive({})
 
+    // 发送axios请求
     async function getState(){
-      data=await $http({url:"/three/data"})
-      
+      data=await $http({url:"/three/data"})   
     }
-
+    // 生命周期，组件挂载到父组件中才会调用
     onMounted(()=>{
       getState().then(()=>{
         console.log("饼状图",data)
-
+        //初始化图表
        let myChart= $echarts.init(document.getElementById("myEcharts"))
+       //设置图表
        myChart.setOption({
          legend:{
            top:"bottom"

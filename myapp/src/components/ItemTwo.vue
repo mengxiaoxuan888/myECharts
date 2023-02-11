@@ -18,12 +18,13 @@ export default {
       data = await $http({ url: "/two/data" });
       console.log(data.data.chartTwo.chartData)
     }
-
+    // 生命周期，组件挂载到父组件中才会调用
     onMounted(() => {
       getState().then(() => {
         console.log("折线图", data);
-
+        //初始化图表
         let myChart = $echarts.init(document.getElementById("myEchartsTwo"));
+        //设置图表
         myChart.setOption({
           tooltip:{
             trigger:"axis",

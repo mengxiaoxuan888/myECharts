@@ -10,4 +10,5 @@ router.get("/data",(req,res)=>{
     res.send({msg:"我是地图的路由地址",chinaData:mapData})
 })
 
+// 将路由暴漏出去
 module.exports=router;

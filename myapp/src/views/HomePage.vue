@@ -16,7 +16,7 @@
       </section>
       <!-- 中容器 -->
       <section class="itemCenter">
-      
+      <!-- 地图组件 -->
       <MapPage/>
       </section>
       <!-- 右容器 -->
@@ -33,15 +33,17 @@
 </template>
 
 <script>
+// 引入大容器组件
 import ItemPage from "@/components/ItemPage.vue";
-
+// 引入各个图表组件
 import ItemOne from "@/components/ItemOne.vue"
 import ItemTwo from "@/components/ItemTwo.vue"
 import ItemThree from "@/components/ItemThree.vue"
 import ItemFour from "@/components/ItemFour.vue"
 import MapPage from "@/components/mapPage.vue"
-
+// 用于接收数据
 import {inject} from "vue"
+
 export default {
   components: {
     ItemPage,ItemOne,ItemTwo,ItemThree,ItemFour,MapPage
@@ -49,6 +51,7 @@ export default {
   },
 
   setup(){
+    // 接收echarts,axios
     let $echarts=inject("echarts")
     let $http=inject("axios")
     console.log($echarts)

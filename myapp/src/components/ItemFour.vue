@@ -9,11 +9,12 @@
 import { inject, onMounted, reactive } from "vue";
 export default {
   setup() {
+    //引入echarts,axios
     let $echarts = inject("echarts");
     let $http = inject("axios");
 
     let data = reactive({});
-
+    //axios发送数据请求
     async function getState() {
       data = await $http({ url: "/four/data" });
     }
@@ -21,8 +22,9 @@ export default {
     onMounted(() => {
       getState().then(() => {
         console.log("柱状图4", data);
-
+        // 初始化图表
         let myChart = $echarts.init(document.getElementById("myEchartsFour"));
+        // 设置图表
         myChart.setOption({
           grid:{
             left:"3%",

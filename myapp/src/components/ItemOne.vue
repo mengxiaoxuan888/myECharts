@@ -7,11 +7,14 @@
 
 <script>
 import { inject, onMounted, reactive } from "vue";
+
 export default {
   setup() {
+    // 引入echarts,asiox
     let $echarts = inject("echarts");
     let $http = inject("axios");
 
+    // 设置数据
     let data = reactive({});
     let xdata = reactive([]);
     let ydata = reactive([]);
@@ -21,20 +24,24 @@ export default {
       console.log("xdata", xdata);
       console.log("ydata", ydata);
     }
-
+    // axios发送请求，获取数据
     async function getState() {
+      //发送请求
       data = await $http({ url: "/one/data" });
+      //打印数据
       console.log(data.data.oneData.chartData)
     }
-
+    // 生命周期，组件挂载到父组件中才会调用
     onMounted(() => {
+      // 初始化图表
       let myChart = $echarts.init(document.getElementById("oneChart"));
-      // 调用请求
+      // 调用axios方法请求
       getState().then(() => {
+        // 调用设置数据
         setData();
-
+        // 设置图表
         myChart.setOption({
-          grid:{
+          grid:{//布局
             top:"3%",
             left:"1%",
             right:"6%",
@@ -42,7 +49,7 @@ export default {
             containLabel:true
 
           },
-          xAxis: {
+          xAxis: {//x轴是值
             type: "value",
             axisLine:{
               lineStyle:{
@@ -50,7 +57,7 @@ export default {
               }
             }
           },
-          yAxis: {
+          yAxis: {//y轴是类目
             type: "category",
             data: xdata,
              axisLine:{
